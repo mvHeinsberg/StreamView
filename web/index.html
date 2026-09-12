@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LIVE Stream Übersicht</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>📺 LIVE Stream Übersicht</h1>
+      <p class="subtitle">Live-Events der deutschen Sender &ndash; nächste 4 Wochen</p>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Zugangsart">
+    <button class="tab active" data-access="free" role="tab" aria-selected="true">Frei empfangbar</button>
+    <button class="tab" data-access="paid" role="tab" aria-selected="false">Kostenpflichtig</button>
+  </nav>
+
+  <div class="toolbar">
+    <div class="day-scroller" id="day-scroller" aria-label="Tag wählen"></div>
+    <div class="filters">
+      <select id="medium-filter">
+        <option value="">TV &amp; Radio</option>
+        <option value="tv">Nur TV</option>
+        <option value="radio">Nur Radio-Livestream</option>
+      </select>
+      <select id="category-filter">
+        <option value="">Alle Kategorien</option>
+      </select>
+      <input id="search" type="search" placeholder="Suche nach Titel oder Sender…" />
+    </div>
+  </div>
+
+  <main id="content" class="content">
+    <p class="loading">Lade Daten…</p>
+  </main>
+
+  <footer class="footer">
+    <p>
+      Reine Informationsübersicht &ndash; keine Links zu Streams, keine Bereitstellung von Inhalten.
+      Sendezeiten und Übertragungswege ohne Gewähr, bitte beim jeweiligen Sender/Anbieter prüfen.
+    </p>
+    <p id="generated-at"></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
