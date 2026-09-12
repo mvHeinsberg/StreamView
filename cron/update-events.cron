@@ -1,0 +1,9 @@
+# Beispiel-Crontab-Zeile für die automatische Aktualisierung.
+#
+# Installieren mit: crontab -e   (dann diese Zeile einfügen und Pfad anpassen)
+#
+# Läuft hier alle 6 Stunden. Passe /pfad/zu/live-events-app an dein
+# tatsächliches Verzeichnis an. Die Log-Datei hilft beim Debuggen, falls
+# eine Quelle mal nicht erreichbar ist (siehe update.log).
+
+0 */6 * * * cd /pfad/zu/live-events-app && /usr/bin/python3 update_data.py >> update.log 2>&1

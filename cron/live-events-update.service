@@ -1,0 +1,7 @@
+[Unit]
+Description=LIVE Stream Uebersicht - Datenaktualisierung
+
+[Service]
+Type=oneshot
+WorkingDirectory=/pfad/zu/live-events-app
+ExecStart=/usr/bin/python3 update_data.py

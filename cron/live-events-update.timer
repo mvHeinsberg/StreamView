@@ -1,0 +1,9 @@
+[Unit]
+Description=LIVE Stream Uebersicht - alle 6 Stunden aktualisieren
+
+[Timer]
+OnCalendar=*-*-* 0/6:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
