@@ -1,0 +1,40 @@
+name: Automatische App-Aktualisierung
+
+on:
+  schedule:
+    # Läuft jeden Tag um 04:00 Uhr nachts (UTC)
+    - cron: '0 4 * * *'
+  workflow_dispatch: # Ermöglicht es Ihnen, den Start auch manuell per Knopfdruck auszulösen
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Erlaubt dem Server, die aktualisierten Daten in Ihr GitHub zu speichern
+
+    steps:
+    - name: Code auschecken
+      uses: actions/checkout@v4
+
+    - name: Python einrichten
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Abhängigkeiten installieren
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Python-Skripte ausführen
+      run: |
+        python update_data.py
+        python build_preview.py
+
+    - name: Änderungen automatisch auf GitHub speichern
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@://github.com'
+        git add -A
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Automatische Aktualisierung der Daten und Vorschau" && git push)
