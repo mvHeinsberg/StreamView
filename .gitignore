@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+data/events.json
+data/_debug/
+preview.html
+update.log
+.venv/
