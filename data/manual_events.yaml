@@ -1,0 +1,47 @@
+# Manuell gepflegte Live-Events - siehe providers/manual_events.py
+#
+# Nutze diese Datei vor allem für:
+#   - Streaming-exklusive Events (RTL+, Joyn, WOW, MagentaSport, ...),
+#     die NICHT im normalen TV-Programm (EPG) auftauchen
+#   - einmalige Großereignisse (Award-Shows, Box-/UFC-Kämpfe, Wahlabende, ...)
+#   - ARD-Radio-Konzerte, die WEITER als eine Woche in der Zukunft liegen
+#     (providers/ard_radio_concerts.py deckt i.d.R. nur die aktuelle Woche
+#     ab, siehe README) - hier mit medium: "radio" eintragen
+#
+# WICHTIG: Die folgenden Einträge sind BEISPIELE zur Veranschaulichung des
+# Formats - keine verifizierten echten Termine. Bitte durch tatsächliche,
+# von dir geprüfte Termine ersetzen (z.B. von den offiziellen Programm-
+# Seiten von RTL+, Joyn, WOW, DAZN, Sky, MagentaSport, Verbänden usw.).
+# Termine, die außerhalb der nächsten 4 Wochen liegen, werden automatisch
+# ignoriert - du kannst also auch weiter in die Zukunft planen.
+
+- title: "BEISPIEL: Box-Weltmeisterschaft (Schwergewicht)"
+  start: "2026-09-27T22:00:00+02:00"
+  end: "2026-09-28T01:00:00+02:00"
+  channel: "DAZN"
+  access: "paid"
+  category: "Boxen"
+  description: "Platzhalter - bitte durch echten, geprüften Kampf-Termin ersetzen."
+
+- title: "BEISPIEL: RTL+ exklusive Live-Show"
+  start: "2026-10-03T20:15:00+02:00"
+  channel: "RTL+"
+  access: "paid"
+  category: "Show"
+  description: "Platzhalter - bitte durch echten Streaming-exklusiven Termin ersetzen."
+
+- title: "BEISPIEL: Wahlabend-Sondersendung"
+  start: "2026-09-20T18:00:00+02:00"
+  end: "2026-09-20T23:00:00+02:00"
+  channel: "Das Erste"
+  access: "free"
+  category: "Nachrichten-Spezial"
+  description: "Platzhalter - bitte durch echten Termin ersetzen, falls zutreffend."
+
+- title: "BEISPIEL: WDR 3 Konzert - Sinfoniekonzert"
+  start: "2026-10-08T20:03:00+02:00"
+  channel: "WDR 3"
+  access: "free"
+  category: "Konzert"
+  medium: "radio"
+  description: "Platzhalter - bitte durch echten, geprüften Konzerttermin ersetzen (z.B. von wdr.de/radio/wdr3)."
